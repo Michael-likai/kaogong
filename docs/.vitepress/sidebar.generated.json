@@ -5,12 +5,50 @@
       "link": "/guide/"
     },
     {
-      "text": "基础流程",
+      "text": "2027 国考",
       "collapsed": false,
       "items": [
         {
-          "text": "报考流程（待补充）",
+          "text": "2027 国考公告要点",
+          "link": "/guide/2027-guokao-gonggao"
+        },
+        {
+          "text": "报考流程与时间节点",
           "link": "/guide/baokao-liucheng"
+        },
+        {
+          "text": "选岗思路",
+          "link": "/guide/xuangang"
+        }
+      ]
+    },
+    {
+      "text": "考试类型",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "国考、省考与联考的区别",
+          "link": "/guide/guokao-shengkao"
+        }
+      ]
+    },
+    {
+      "text": "报考资格",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "应届生、基层工作经历与年龄",
+          "link": "/guide/yingjiesheng-jiceng"
+        }
+      ]
+    },
+    {
+      "text": "备考规划",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "备考时间规划",
+          "link": "/guide/shijian-anpai"
         }
       ]
     }
@@ -21,12 +59,38 @@
       "link": "/xingce/"
     },
     {
-      "text": "常识判断",
+      "text": "模块",
       "collapsed": false,
       "items": [
         {
-          "text": "常识判断（待补充）",
+          "text": "常识判断",
           "link": "/xingce/changshi"
+        },
+        {
+          "text": "言语理解",
+          "link": "/xingce/yanyu"
+        },
+        {
+          "text": "数量关系",
+          "link": "/xingce/shuliang"
+        },
+        {
+          "text": "判断推理",
+          "link": "/xingce/panduan"
+        },
+        {
+          "text": "资料分析",
+          "link": "/xingce/ziliao"
+        }
+      ]
+    },
+    {
+      "text": "方法",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "刷题与复盘方法",
+          "link": "/xingce/fangfa"
         }
       ]
     }
@@ -41,8 +105,12 @@
       "collapsed": false,
       "items": [
         {
-          "text": "申论基础（待补充）",
+          "text": "申论基础",
           "link": "/shenlun/shenlun-jichu"
+        },
+        {
+          "text": "素材积累与使用",
+          "link": "/shenlun/sucai"
         }
       ]
     },
@@ -51,8 +119,12 @@
       "collapsed": false,
       "items": [
         {
-          "text": "面试入门（待补充）",
+          "text": "面试入门",
           "link": "/shenlun/mianshi-rumen"
+        },
+        {
+          "text": "面试常见题型与答题框架",
+          "link": "/shenlun/mianshi-tiku"
         }
       ]
     }
@@ -67,12 +139,32 @@
       "collapsed": false,
       "items": [
         {
-          "text": "真题与资料（待补充）",
+          "text": "真题与官方资料",
           "link": "/kb/zhenti"
+        }
+      ]
+    },
+    {
+      "text": "流程",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "体检与考察（政审）",
+          "link": "/kb/tijian-zhengshen"
+        }
+      ]
+    },
+    {
+      "text": "常见问题",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "常见问题",
+          "link": "/kb/faq"
         },
         {
-          "text": "常见问题（待补充）",
-          "link": "/kb/faq"
+          "text": "考公术语表",
+          "link": "/kb/mingci"
         }
       ]
     }

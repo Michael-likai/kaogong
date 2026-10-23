@@ -22,7 +22,7 @@ export const home = {
   lead: '从报考流程、行测题型到申论面试，把分散的笔记和资料整理成可检索、可更新的备考知识库。',
   primary: { text: '开始备考', link: '/guide/' },
   secondary: { text: '浏览资料库', link: '/kb/' },
-  notice: { text: '内容持续整理中，欢迎补充', link: '/about' },
+  notice: { text: '2027 国考报名 10 月 24 日 18:00 截止', link: '/guide/2027-guokao-gonggao' },
   modes: [
     {
       tag: '01 · 报考指南',
