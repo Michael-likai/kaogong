@@ -1,0 +1,35 @@
+{
+  "sections": [
+    {
+      "dir": "guide",
+      "label": "报考指南",
+      "sidebar": "报考指南",
+      "nav": true,
+      "description": "从公告、选岗到报名、笔试、面试，把考公流程理清楚。"
+    },
+    {
+      "dir": "xingce",
+      "label": "行测",
+      "sidebar": "行测",
+      "nav": true,
+      "description": "常识判断、言语理解、数量关系、判断推理、资料分析的学习笔记。"
+    },
+    {
+      "dir": "shenlun",
+      "label": "申论与面试",
+      "sidebar": "申论与面试",
+      "nav": true,
+      "description": "申论写作方法、素材积累与面试表达训练。"
+    },
+    {
+      "dir": "kb",
+      "label": "资料库",
+      "sidebar": "资料库",
+      "nav": true,
+      "description": "真题、笔记、常见问题与备考经验汇总。"
+    }
+  ],
+  "nav": [
+    { "text": "关于", "link": "/about" }
+  ]
+}

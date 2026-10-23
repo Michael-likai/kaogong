@@ -1,0 +1,80 @@
+{
+  "/guide/": [
+    {
+      "text": "概览",
+      "link": "/guide/"
+    },
+    {
+      "text": "基础流程",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "报考流程（待补充）",
+          "link": "/guide/baokao-liucheng"
+        }
+      ]
+    }
+  ],
+  "/xingce/": [
+    {
+      "text": "概览",
+      "link": "/xingce/"
+    },
+    {
+      "text": "常识判断",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "常识判断（待补充）",
+          "link": "/xingce/changshi"
+        }
+      ]
+    }
+  ],
+  "/shenlun/": [
+    {
+      "text": "概览",
+      "link": "/shenlun/"
+    },
+    {
+      "text": "申论",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "申论基础（待补充）",
+          "link": "/shenlun/shenlun-jichu"
+        }
+      ]
+    },
+    {
+      "text": "面试",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "面试入门（待补充）",
+          "link": "/shenlun/mianshi-rumen"
+        }
+      ]
+    }
+  ],
+  "/kb/": [
+    {
+      "text": "概览",
+      "link": "/kb/"
+    },
+    {
+      "text": "资料",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "真题与资料（待补充）",
+          "link": "/kb/zhenti"
+        },
+        {
+          "text": "常见问题（待补充）",
+          "link": "/kb/faq"
+        }
+      ]
+    }
+  ]
+}
