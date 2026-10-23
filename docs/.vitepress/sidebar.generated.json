@@ -168,5 +168,29 @@
         }
       ]
     }
+  ],
+  "/sprint/": [
+    {
+      "text": "概览",
+      "link": "/sprint/"
+    },
+    {
+      "text": "三大板块",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "林武 · 2026 公开活动速记",
+          "link": "/sprint/linwu"
+        },
+        {
+          "text": "2026 政府工作报告双记速记",
+          "link": "/sprint/government-report"
+        },
+        {
+          "text": "2026 国考行政执法政治理论专项",
+          "link": "/sprint/political-theory"
+        }
+      ]
+    }
   ]
 }

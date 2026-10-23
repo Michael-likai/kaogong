@@ -5,7 +5,7 @@ import sections from '../../sections.json'
 import Logo from './Logo.vue'
 import Icon from './Icon.vue'
 
-const modeIcons = ['book', 'list', 'sparkles', 'search']
+const modeIcons = ['book', 'list', 'sparkles', 'search', 'rocket']
 const lines = home.title.split('\n')
 const sectionCount = sections.sections.length
 </script>
@@ -283,7 +283,7 @@ const sectionCount = sections.sections.length
 
 .fh-modes {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 16px;
 }
 

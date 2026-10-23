@@ -51,6 +51,13 @@ export const home = {
       desc: '真题、笔记、常见问题和备考经验，统一归档方便检索。',
       link: '/kb/',
       cta: '打开资料库'
+    },
+    {
+      tag: '05 · 冲刺资料',
+      title: '2026 时政速记',
+      desc: '林武公开活动、政府工作报告双记、国考政治理论专项。',
+      link: '/sprint/',
+      cta: '进入冲刺'
     }
   ] satisfies HomeMode[],
   features: [

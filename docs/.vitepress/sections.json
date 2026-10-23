@@ -27,9 +27,19 @@
       "sidebar": "资料库",
       "nav": true,
       "description": "真题、笔记、常见问题与备考经验汇总。"
+    },
+    {
+      "dir": "sprint",
+      "label": "冲刺资料",
+      "sidebar": "2026 冲刺一本通",
+      "nav": true,
+      "description": "山东时政速记、政府工作报告对照、国考政治理论专项与 21 天冲刺计划。"
     }
   ],
   "nav": [
-    { "text": "关于", "link": "/about" }
+    {
+      "text": "关于",
+      "link": "/about"
+    }
   ]
 }
