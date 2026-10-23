@@ -2,6 +2,8 @@
 
 公务员考试备考资料站：报考指南、行测、申论与面试、资料库、山东省考信息、2026 冲刺速记。
 
+仓库：<https://github.com/Michael-likai/kaogong>
+
 **在线预览：<https://kaogong-assistant.pages.dev/>**
 
 ![首页预览](./screenshots/home.png)
@@ -18,6 +20,14 @@
 | 资料库 | `docs/kb/` | 真题、笔记、经验、FAQ |
 | 山东省考信息 | `docs/shandong/` | 2027 山东省考时间、报名、笔试面试、选岗与省情 |
 | 冲刺资料 | `docs/sprint/` | 2026 时政速记、政府工作报告对照、政治理论专项 |
+
+## 自动部署
+
+push 到 `main` 后，GitHub Actions 会自动构建并部署到 Cloudflare Pages，约 1—2 分钟。
+
+- 线上预览：<https://kaogong-assistant.pages.dev/>
+- 工作流：`.github/workflows/deploy-cloudflare.yml`
+- 当前 `PREVIEW=1`，站点带 `noindex`；正式公开时把该变量改为 `0` 或删除。
 
 ## 本地开发
 
