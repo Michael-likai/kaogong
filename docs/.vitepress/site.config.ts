@@ -40,7 +40,7 @@ export const siteConfig: SiteConfig = {
   title: '考公小助手 · 备考资料与学习路径',
   description:
     '考公小助手：整理公务员考试报考指南、行测、申论与面试资料，提供可检索、可持续更新的备考知识库。',
-  url: 'https://kaogong.example.com',
+  url: 'https://kaogong-assistant.pages.dev',
   lang: 'zh-CN',
   ogImage: '/og.png',
   author: {
