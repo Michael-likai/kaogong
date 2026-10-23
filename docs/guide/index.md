@@ -18,6 +18,7 @@ tags: [报考]
 - [国考、省考与联考的区别](/guide/guokao-shengkao)
 - [应届生、基层工作经历与年龄](/guide/yingjiesheng-jiceng)
 - [备考时间规划](/guide/shijian-anpai)
+- [山东省考信息](/shandong/)
 
 ::: tip 以官方公告为准
 考试政策、职位表和分数线每年都会调整。本章以国家公务员局 2027 年度公告为基础整理，最终以官方专题网站和当年公告为准。

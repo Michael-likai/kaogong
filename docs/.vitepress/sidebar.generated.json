@@ -169,6 +169,50 @@
       ]
     }
   ],
+  "/shandong/": [
+    {
+      "text": "概览",
+      "link": "/shandong/"
+    },
+    {
+      "text": "2027 山东省考",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "2027 山东省考时间与备考节奏",
+          "link": "/shandong/2027-shijian"
+        },
+        {
+          "text": "山东省考报考条件与报名流程",
+          "link": "/shandong/baoming"
+        }
+      ]
+    },
+    {
+      "text": "考试内容",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "山东省考笔试内容与试卷特点",
+          "link": "/shandong/bishi"
+        },
+        {
+          "text": "山东省考面试形式与成绩计算",
+          "link": "/shandong/mianshi"
+        }
+      ]
+    },
+    {
+      "text": "报考策略",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "山东省考选岗与省情",
+          "link": "/shandong/xuangang"
+        }
+      ]
+    }
+  ],
   "/sprint/": [
     {
       "text": "概览",

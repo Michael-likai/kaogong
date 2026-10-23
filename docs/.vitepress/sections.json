@@ -29,6 +29,13 @@
       "description": "真题、笔记、常见问题与备考经验汇总。"
     },
     {
+      "dir": "shandong",
+      "label": "山东省考",
+      "sidebar": "山东省考信息",
+      "nav": true,
+      "description": "2027 山东省考时间、报考条件、笔试面试、选岗与省情。"
+    },
+    {
       "dir": "sprint",
       "label": "冲刺资料",
       "sidebar": "2026 冲刺一本通",
