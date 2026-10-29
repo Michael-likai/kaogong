@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { withPage } from '../links'
+import { useLanguage } from "../i18n"
+const { english, t, withPage } = useLanguage()
 import { siteConfig } from '../../site.config'
 import Logo from './Logo.vue'
 
@@ -13,17 +14,17 @@ const github = siteConfig.socialLinks.find((item) => item.icon === 'github')?.li
     <div class="site-footer-inner">
       <div class="site-footer-brand">
         <Logo :size="22" />
-        <strong>{{ siteConfig.name }}</strong>
-        <span>{{ siteConfig.footer.message }}</span>
+        <strong>{{ t(siteConfig.name) }}</strong>
+        <span>{{ t(siteConfig.footer.message) }}</span>
       </div>
-      <nav class="site-footer-links" aria-label="页脚导航">
-        <a v-for="item in siteConfig.footer.links" :key="item.link" :href="withPage(item.link)">{{ item.text }}</a>
+      <nav class="site-footer-links" :aria-label="t('页脚导航')">
+        <a v-for="item in siteConfig.footer.links" :key="item.link" :href="withPage(item.link)">{{ t(item.text) }}</a>
         <a v-if="github" :href="github" target="_blank" rel="noopener">GitHub</a>
       </nav>
       <p class="site-footer-copy">
         © {{ year }}
-        <a v-if="authorUrl" :href="authorUrl" target="_blank" rel="noopener">{{ siteConfig.author.name }}</a>
-        <span v-else>{{ siteConfig.author.name }}</span>
+        <a v-if="authorUrl" :href="authorUrl" target="_blank" rel="noopener">{{ t(siteConfig.author.name) }}</a>
+        <span v-else>{{ t(siteConfig.author.name) }}</span>
         · Built with VitePress
       </p>
     </div>

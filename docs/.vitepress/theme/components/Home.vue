@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import { withPage } from '../links'
-import { home } from '../../home'
+import { useLanguage } from "../i18n"
+const { english, t, withPage } = useLanguage()
+import { home as zhHome } from '../../home'
+import { englishHome } from '../../home.en'
+import { computed } from 'vue'
+const home = computed(() => english.value ? englishHome : zhHome)
 import sections from '../../sections.json'
 import Logo from './Logo.vue'
 import Icon from './Icon.vue'
 
 const modeIcons = ['book', 'list', 'sparkles', 'search', 'layout', 'rocket']
-const lines = home.title.split('\n')
+const lines = computed(() => home.value.title.split('\n'))
 const sectionCount = sections.sections.length
 </script>
 
@@ -36,9 +40,9 @@ const sectionCount = sections.sections.length
 
     <section class="fh-section">
       <header class="fh-head">
-        <p class="fh-kicker">备考资料，一站整理</p>
-        <h2>从报考到面试，分区整理</h2>
-        <p>按备考阶段划分内容，找资料、看方法、做复盘都在一个地方。</p>
+        <p class="fh-kicker">{{ t("备考资料，一站整理") }}</p>
+        <h2>{{ t("从报考到面试，分区整理") }}</h2>
+        <p>{{ t("按备考阶段划分内容，找资料、看方法、做复盘都在一个地方。") }}</p>
       </header>
       <div class="fh-modes">
         <a
@@ -59,9 +63,9 @@ const sectionCount = sections.sections.length
 
     <section class="fh-section">
       <header class="fh-head">
-        <p class="fh-kicker">随时可查</p>
-        <h2>这个资料站能帮你做什么</h2>
-        <p>资料统一归档、可搜索、可长期更新，不用再翻聊天记录和收藏夹。</p>
+        <p class="fh-kicker">{{ t("随时可查") }}</p>
+        <h2>{{ t("这个资料站能帮你做什么") }}</h2>
+        <p>{{ t("资料统一归档、可搜索、可长期更新，不用再翻聊天记录和收藏夹。") }}</p>
       </header>
       <div class="fh-features">
         <div v-for="feature in home.features" :key="feature.title" class="fh-feature">
@@ -74,11 +78,11 @@ const sectionCount = sections.sections.length
 
     <section class="fh-section fh-steps">
       <div class="fh-steps-copy">
-        <p class="fh-kicker">备考路径</p>
-        <h2>从选岗到上岸</h2>
-        <p>没有账号体系，也没有复杂操作，打开就能查。</p>
+        <p class="fh-kicker">{{ t("备考路径") }}</p>
+        <h2>{{ t("从选岗到上岸") }}</h2>
+        <p>{{ t("没有账号体系，也没有复杂操作，打开就能查。") }}</p>
         <a class="fh-link" :href="withPage('/guide/')">
-          查看报考指南
+          {{ t("查看报考指南") }}
           <Icon name="arrow" :size="15" />
         </a>
       </div>
@@ -97,10 +101,10 @@ const sectionCount = sections.sections.length
       <div class="fh-cta-inner">
         <Logo :size="44" />
         <div>
-          <h2>开始整理你的考公资料</h2>
-          <p>先看报考流程，再按模块推进复习。素材到位后，这个站会持续更新。</p>
+          <h2>{{ t("开始整理你的考公资料") }}</h2>
+          <p>{{ t("先看报考流程，再按模块推进复习。素材到位后，这个站会持续更新。") }}</p>
         </div>
-        <a class="fh-btn fh-primary" :href="withPage('/guide/')">开始备考</a>
+        <a class="fh-btn fh-primary" :href="withPage('/guide/')">{{ t("开始备考") }}</a>
       </div>
     </section>
   </div>

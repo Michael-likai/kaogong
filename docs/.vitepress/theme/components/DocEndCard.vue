@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { useLanguage } from "../i18n"
+const { english, t, withPage } = useLanguage()
 import { computed, ref } from 'vue'
 import { useData } from 'vitepress'
-import { withPage } from '../links'
 import sections from '../../sections.json'
 import Icon from './Icon.vue'
 
@@ -10,7 +11,7 @@ const copied = ref(false)
 const failed = ref(false)
 
 const relativePath = computed(() => page.value.relativePath || '')
-const section = computed(() => sections.sections.find((item) => relativePath.value.startsWith(`${item.dir}/`)))
+const section = computed(() => sections.sections.find((item) => relativePath.value.replace(/^en\//, '').startsWith(`${item.dir}/`)))
 const markdownUrl = computed(() => withPage(`/${relativePath.value}`))
 const sectionUrl = computed(() => withPage(`/${section.value?.dir || ''}/`))
 
@@ -51,16 +52,16 @@ async function copyMarkdown() {
   <aside v-if="relativePath.endsWith('.md') && relativePath !== 'index.md'" class="doc-end">
     <div class="doc-end-copy">
       <p class="doc-end-kicker">Continue</p>
-      <p class="doc-end-title">读完了，接下来去哪？</p>
+      <p class="doc-end-title">{{ t("读完了，接下来去哪？") }}</p>
       <div class="doc-end-links">
-        <a v-if="section" :href="sectionUrl">返回{{ section.sidebar }}</a>
-        <a :href="withPage('/')">回到首页</a>
-        <a :href="markdownUrl" target="_blank" rel="noopener">查看 Markdown</a>
+        <a v-if="section" :href="sectionUrl">{{ t("返回") }}{{ t(section.sidebar) }}</a>
+        <a :href="withPage('/')">{{ t("回到首页") }}</a>
+        <a :href="markdownUrl" target="_blank" rel="noopener">{{ t("查看 Markdown") }}</a>
       </div>
     </div>
     <button type="button" class="doc-end-copy-btn" @click="copyMarkdown">
       <Icon :name="copied ? 'check' : 'copy'" :size="16" />
-      {{ copied ? '已复制' : failed ? '复制失败' : '复制 Markdown' }}
+      {{ t(copied ? '已复制' : failed ? '复制失败' : '复制 Markdown') }}
     </button>
   </aside>
 </template>

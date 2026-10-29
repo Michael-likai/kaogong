@@ -1,5 +1,6 @@
 import { defineConfig, type HeadConfig } from 'vitepress'
 import { resolve } from 'node:path'
+import translations from './translations.json'
 import { siteConfig } from './site.config'
 import sectionsData from './sections.json'
 import sidebar from './sidebar.generated.json'
@@ -61,7 +62,79 @@ const nav = [
   ...sectionsData.nav.map((item) => ({ ...item, link: pageLink(item.link) }))
 ]
 
+const englishSite = {
+  ...siteConfig,
+  name: 'Civil Service Exam Assistant',
+  title: 'Civil Service Exam Assistant',
+  description: 'Application guides and study resources for civil service exams.',
+  lang: 'en'
+}
+const translate = (text: string) => (translations as Record<string, string>)[text] || text
+const enSidebar = Object.fromEntries(
+  Object.entries(sidebar).map(([key, groups]) => [
+    '/en' + key,
+    groups.map((group: any) => ({
+      ...group,
+      text: translate(group.text),
+      ...(group.link ? { link: '/en' + group.link } : {}),
+      ...(group.items ? {
+        items: group.items.map((item: any) => ({ ...item, link: '/en' + item.link }))
+      } : {})
+    }))
+  ])
+)
+const englishTheme = {
+  nav: nav.map(item => ({
+    ...item,
+    text: translate(item.text),
+    link: '/en' + item.link,
+    ...('activeMatch' in item && typeof item.activeMatch === 'string'
+      ? { activeMatch: '^/en' + item.activeMatch.slice(1) }
+      : {})
+  })),
+  sidebar: enSidebar,
+  outline: { label: 'On this page', level: [2, 3] as [number, number] },
+  docFooter: { prev: 'Previous', next: 'Next' },
+  lastUpdated: { text: 'Last updated' },
+  sidebarMenuLabel: 'Contents',
+  returnToTopLabel: 'Back to top',
+  darkModeSwitchLabel: 'Theme',
+  lightModeSwitchTitle: 'Light mode',
+  darkModeSwitchTitle: 'Dark mode',
+  langMenuLabel: 'Change language',
+  skipToContentLabel: 'Skip to content',
+  search: {
+    provider: 'local' as const,
+    options: {
+      locales: {
+        en: {
+          translations: {
+            button: { buttonText: 'Search', buttonAriaLabel: 'Search' },
+            modal: {
+              noResultsText: 'No results found',
+              resetButtonTitle: 'Clear search',
+              footer: { selectText: 'Select', navigateText: 'Navigate', closeText: 'Close' }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 export default defineConfig({
+  srcExclude: ['product-team/**'],
+  locales: {
+    root: { label: '中文', lang: 'zh-CN' },
+    en: {
+      label: 'English',
+      lang: englishSite.lang,
+      title: englishSite.title,
+      titleTemplate: ':title · Civil Service Exam Assistant',
+      description: englishSite.description,
+      themeConfig: englishTheme
+    }
+  },
   lang: siteConfig.lang,
   base: BASE,
   title: siteConfig.name,
@@ -92,7 +165,7 @@ export default defineConfig({
           }
         })
   },
-  transformHead: (ctx) => buildHead(ctx, { site: siteConfig, siteUrl: SITE_URL, cleanUrls: CLEAN_URLS, preview: PREVIEW }),
+  transformHead: (ctx) => buildHead(ctx, { site: ctx.pageData.relativePath.startsWith('en/') ? englishSite : siteConfig, siteUrl: SITE_URL, cleanUrls: CLEAN_URLS, preview: PREVIEW }),
   buildEnd: (vpSite) => buildEnd(vpSite, { site: siteConfig, siteUrl: SITE_URL, cleanUrls: CLEAN_URLS, preview: PREVIEW }),
   vite: {
     define: {

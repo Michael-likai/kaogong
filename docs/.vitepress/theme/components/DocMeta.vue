@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useLanguage } from "../i18n"
+const { english, t } = useLanguage()
 import { computed, onMounted, ref } from 'vue'
 import { useData } from 'vitepress'
 
@@ -9,7 +11,7 @@ const minutes = ref<number | null>(Number.isFinite(configuredMinutes) && configu
 const updated = computed(() => {
   const timestamp = page.value.lastUpdated
   if (!timestamp) return ''
-  return new Intl.DateTimeFormat('zh-CN', { dateStyle: 'medium' }).format(new Date(timestamp))
+  return new Intl.DateTimeFormat(english.value ? 'en' : 'zh-CN', { dateStyle: 'medium' }).format(new Date(timestamp))
 })
 const tags = computed(() => (Array.isArray(frontmatter.value.tags) ? (frontmatter.value.tags as string[]) : []))
 
@@ -23,9 +25,10 @@ onMounted(() => {
 </script>
 
 <template>
+  <p v-if="english && frontmatter.chineseContent" role="note" class="language-notice">This exam preparation article is available in Chinese only. The interface is in English.</p>
   <div v-if="minutes || updated || tags.length" class="doc-meta">
-    <span v-if="minutes" class="doc-meta-item">{{ minutes }} 分钟阅读</span>
-    <span v-if="updated" class="doc-meta-item">更新于 {{ updated }}</span>
+    <span v-if="minutes" class="doc-meta-item">{{ minutes }} {{ t("分钟阅读") }}</span>
+    <span v-if="updated" class="doc-meta-item">{{ t("更新于") }} {{ updated }}</span>
     <span v-for="tag in tags" :key="tag" class="doc-meta-tag">{{ tag }}</span>
   </div>
 </template>

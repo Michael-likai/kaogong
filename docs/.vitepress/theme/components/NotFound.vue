@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { withPage } from '../links'
+import { useLanguage } from "../i18n"
+const { english, t, withPage } = useLanguage()
 import Icon from './Icon.vue'
 
 const links = [
@@ -14,11 +15,11 @@ const links = [
   <div class="not-found">
     <div class="not-found-glow" aria-hidden="true"></div>
     <p class="not-found-code">404</p>
-    <h1>这个页面不存在</h1>
-    <p class="not-found-text">链接可能已经移动，或者地址拼写有误。可以回到首页，或按 <kbd>⌘</kbd> + <kbd>K</kbd> 搜索站内内容。</p>
+    <h1>{{ t("这个页面不存在") }}</h1>
+    <p class="not-found-text">{{ t("链接可能已经移动，或者地址拼写有误。可以回到首页，或按 ") }}<kbd>⌘</kbd> + <kbd>K</kbd>{{ t(" 搜索站内内容。") }}</p>
     <div class="not-found-links">
       <a v-for="link in links" :key="link.link" :href="withPage(link.link)">
-        {{ link.text }}
+        {{ t(link.text) }}
         <Icon name="arrow" :size="15" />
       </a>
     </div>
