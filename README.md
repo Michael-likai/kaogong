@@ -53,6 +53,14 @@ pnpm build    # 产物在 docs/.vitepress/dist
 
 ## 新增内容
 
+### 语言版本
+
+中文使用原有地址，英文界面使用 `/en/`。导航、首页、关于页和界面提示提供英文；备考正文与文章标题保留中文，并在英文界面提示语言范围。
+
+`pnpm dev` 和 `pnpm build` 会先运行 `scripts/gen-locales.mjs`，从中文资料生成英文界面的页面，因此不要直接编辑 `docs/en/`。新增或修改中文资料后重新运行生成命令或重启开发服务。首页英文文案位于 `docs/.vitepress/home.en.ts`，界面词条位于 `docs/.vitepress/translations.json`，英文关于页源文案位于生成脚本中。
+
+团队验收与复盘记录放在 `docs/product-team/`，排除站点页面、搜索及正文导出。
+
 ```bash
 pnpm new -- guide/xxx "页面标题"
 pnpm new -- xingce/xxx "页面标题"

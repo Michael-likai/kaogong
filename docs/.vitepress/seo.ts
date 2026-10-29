@@ -99,7 +99,7 @@ function breadcrumbs(rel: string, title: string, site: SiteConfig, siteUrl: stri
 export function buildHead(ctx: TransformHeadContext, { site, siteUrl, cleanUrls, preview = false }: BuildOptions): HeadConfig[] {
   const { pageData } = ctx
   const rel = pageData.relativePath || 'index.md'
-  const isHome = rel === 'index.md'
+  const isHome = rel === 'index.md' || rel === 'en/index.md'
   const isNotFound = Boolean(pageData.isNotFound) || rel === '404.md'
   const path = pagePath(rel, cleanUrls)
   const url = siteUrl + path
@@ -201,7 +201,7 @@ export function buildHead(ctx: TransformHeadContext, { site, siteUrl, cleanUrls,
 }
 
 export function buildEnd(vpSite: { pages: string[]; srcDir: string; outDir: string }, { site, siteUrl, cleanUrls, preview = false }: BuildOptions) {
-  const pages = vpSite.pages.filter((page) => page !== '404.md' && page.endsWith('.md'))
+  const pages = vpSite.pages.filter((page) => page !== '404.md' && !page.startsWith('product-team/') && page.endsWith('.md'))
   const entries = makeEntries(vpSite.srcDir, pages, cleanUrls)
 
   if (site.features.markdownCopies) {
@@ -247,7 +247,7 @@ function scanPages(docsRoot: string): string[] {
   const pages: string[] = []
   const walk = (dir: string, prefix: string) => {
     for (const entry of readdirSync(dir, { withFileTypes: true })) {
-      if (entry.name.startsWith('.') || entry.name === 'public' || entry.name === 'node_modules') continue
+      if (entry.name === 'product-team' || entry.name.startsWith('.') || entry.name === 'public' || entry.name === 'node_modules') continue
       const rel = prefix ? `${prefix}/${entry.name}` : entry.name
       if (entry.isDirectory()) walk(join(dir, entry.name), rel)
       else if (entry.name.endsWith('.md')) pages.push(rel)
@@ -349,6 +349,7 @@ export function markdownDevPlugin(options: { docsRoot: string; site: SiteConfig;
           res.end(pathname === '/llms.txt' ? index : full)
           return
         }
+        if (decodeURIComponent(pathname).split('/').includes('product-team')) { res.statusCode = 404; res.end('Not found'); return }
         if (!pathname.endsWith('.md')) return next()
         const file = resolve(root, decodeURIComponent(pathname.replace(/^\//, '')))
         if (!file.startsWith(root + sep) || !existsSync(file)) return next()

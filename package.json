@@ -6,8 +6,8 @@
   "description": "考公小助手：报考指南、行测、申论与面试的备考资料站。",
   "scripts": {
     "gen:sidebar": "node scripts/gen-sidebar.mjs",
-    "dev": "node scripts/gen-sidebar.mjs && vitepress dev docs",
-    "build": "node scripts/gen-sidebar.mjs && vitepress build docs",
+    "dev": "node scripts/gen-locales.mjs && node scripts/gen-sidebar.mjs && vitepress dev docs",
+    "build": "node scripts/gen-locales.mjs && node scripts/gen-sidebar.mjs && vitepress build docs",
     "preview": "vitepress preview docs",
     "new": "node scripts/new.mjs",
     "deploy": "node scripts/deploy.mjs all",
