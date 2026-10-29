@@ -55,7 +55,7 @@ if (target === 'cloudflare' || target === 'all') {
     console.warn('\n跳过 Cloudflare：缺少 CLOUDFLARE_API_TOKEN')
     if (target === 'cloudflare') process.exit(1)
   } else {
-    const project = process.env.CF_PAGES_PROJECT || 'folio-docs'
+    const project = process.env.CF_PAGES_PROJECT || 'kaogong-assistant'
     run(
       `npx -y wrangler@3 pages deploy docs/.vitepress/dist --project-name ${project} --branch main --commit-dirty=true`
     )
